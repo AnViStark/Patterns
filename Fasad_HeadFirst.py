@@ -146,36 +146,6 @@ class HomeTheaterFacade:
         self.dvd.eject()
         self.dvd.off()
 
-    def listen_to_cd(self):
-        print("Get ready to listen to a CD...")
-        self.amp.on()
-        self.amp.set_cd(self.cd)
-        self.amp.set_surround_sound()
-        self.amp.set_volume(5)
-        self.cd.on()
-        self.cd.play()
-
-    def end_cd(self):
-        print("Shutting down CD player...")
-        self.cd.stop()
-        self.cd.eject()
-        self.cd.off()
-        self.amp.off()
-
-    def listen_to_radio(self, frequency):
-        print("Get ready to listen to the radio...")
-        self.amp.on()
-        self.amp.set_tuner(self.tuner)
-        self.tuner.on()
-        self.tuner.set_frequency(frequency)
-        self.amp.set_volume(5)
-
-    def end_radio(self):
-        print("Shutting down radio...")
-        self.tuner.off()
-        self.amp.off()
-
-
 if __name__ == "__main__":
     amp = Amplifier()
     tuner = Tuner()
